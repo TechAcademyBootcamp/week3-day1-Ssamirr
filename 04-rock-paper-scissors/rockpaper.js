@@ -1,20 +1,29 @@
-var k="1";
-        var d="2";
-        var q="3";
+var kagiz=1;
+        var das=2;
+        var qayci=3;
         var komp=Math.floor(Math.random() * 3+1);
 
         prompt("Zehmet olmasa adinizi daxil edin");
-       var secilen=prompt("Birini secin \n" + k +"-kagiz \n"  + d +"-das \n"+q+"-qayci");
-
-    document.write("Sizin secdiyiniz: " + secilen + '<br>');
-    document.write("Kompyuterin secdiyi: \n" + komp + '<br>');
-
-    if(secilen==1 && komp==1 || secilen==2 && komp==2 || secilen==3 && komp==3){
-        document.write("Beraber");
+       var secilen=prompt("Birini secin \n" + kagiz +"-kagiz \n"  + das +"-das \n"+qayci+"-qayci");
+       secilen=parseInt(secilen);
+       if(isNaN(secilen)){
+        alert("Yalniz eded daxil ede bilersiniz");
+        throw new Error("Yalniz eded daxil ede bilersiniz");
     }
-    else if(secilen==1 && komp==2 || secilen==3 && komp==1 || secilen==2 && komp==3 ){
-        document.write("Qazandiniz");
+    if(secilen===kagiz || secilen===das || secilen===qayci){
+        document.write("Sizin secdiyiniz: " + secilen + '<br>');
+        document.write("Kompyuterin secdiyi: \n" + komp + '<br>');
+            if(secilen===komp){
+                document.write("Beraber");
+             }
+             else if(secilen===kagiz && komp===das || secilen===qayci && komp===kagiz || secilen===das && komp===qayci ){
+                document.write("Qazandiniz");
+            }
+            else{
+                document.write("Meglub oldunuz");
+            }
     }
-    else {
-        document.write("Meglub oldunuz");
+
+    else{
+        document.write("Yanlish");
     }
